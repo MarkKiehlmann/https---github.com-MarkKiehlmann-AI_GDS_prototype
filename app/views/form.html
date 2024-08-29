@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Fish License Application</h1>
+        <form action="/check-answers" method="post" novalidate>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="first-name">First name</label>
+                <input class="govuk-input" id="first-name" name="first-name" type="text" required>
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="surname">Surname</label>
+                <input class="govuk-input" id="surname" name="surname" type="text" required>
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="postcode">Post code</label>
+                <input class="govuk-input" id="postcode" name="postcode" type="text" required>
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="mobile-number">Mobile number</label>
+                <input class="govuk-input" id="mobile-number" name="mobile-number" type="text"
+                    pattern="^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$" required>
+                <span class="govuk-hint">Enter a UK mobile number, e.g., 07123456789 or +44 7123 456789.</span>
+            </div>
+
+            <button class="govuk-button" type="submit">Continue</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('mobile-number').addEventListener('input', function (event) {
+        const mobileNumber = event.target.value;
+        const pattern = /^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$/;
+        if (!pattern.test(mobileNumber)) {
+            event.target.setCustomValidity('Please enter a valid UK mobile number.');
+        } else {
+            event.target.setCustomValidity('');
+        }
+    });
+</script>
+{% endblock %}
