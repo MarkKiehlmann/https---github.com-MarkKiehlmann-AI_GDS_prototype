@@ -1,0 +1,33 @@
+Can you create the journey flow for the digital service to issue a fish license?
+Create the Nunjucks templates and the necessary JavaScript:
+
+Project Overview:
+Introduction Page:
+A brief description of the service.
+A "Start" button linking to the form page.
+Form Page:
+Fields: First Name, Surname, Post Code, and Mobile Number.
+Client-side validation for the mobile number to ensure it adheres to UK formats.
+A "Continue" button linking to the Check Answers page.
+Check Answers Page:
+Displays the data entered on the form page.
+Includes a checkbox for the user to agree to a generic declaration statement.
+A "Continue" button linking to the Success page.
+Success Page:
+Confirms the successful application for a fishing license.
+Displays a license number in an auto-sequence format.
+No further buttons on this page.
+Key Considerations:
+Accessibility: Follow GOV.UK standards, ensuring the service is accessible and compliant with UK accessibility requirements.
+Styling: Use standard GOV.UK styling for headers, footers, and content areas.
+Localization: Service will be in UK English only.
+
+
+License Number Generation: For the auto-sequence license number to be a simple incrementing number that continues across all users;
+Data Persistence:  the data ia to be stored  (e.g., to a database)so, include a mock backend interaction wtih a mock API;
+Validation Rules: the mobile number and post code should adheres to UK formats;
+Generic Declaration Statement: "You should answer all question truthfully or your license will not be valid.";
+Error Handling: include basic error messages if the user tries to proceed without filling in the required fields first name, surname and post code;
+Accessibility Features: While there are no specific accessibility features requested, include a basic outline to ensure GOV.UK compliance ;
+
+Before you begin, please ask any clarifying questions to make your answer more appropriate.
